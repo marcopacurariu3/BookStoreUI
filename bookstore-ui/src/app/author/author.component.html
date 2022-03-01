@@ -1,0 +1,32 @@
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <h2>List of authors</h2>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let author"> {{author.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="birthDate">
+            <th mat-header-cell *matHeaderCellDef> Birth Date </th>
+            <td mat-cell *matCellDef="let author"> {{author.birthDate}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="gender">
+            <th mat-header-cell *matHeaderCellDef> Gender </th>
+            <td mat-cell *matCellDef="let author"> {{author.gender}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="deathDate">
+            <th mat-header-cell *matHeaderCellDef> Death date </th>
+            <td mat-cell *matCellDef="let author"> {{author.deathDate}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
