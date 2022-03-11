@@ -1,6 +1,6 @@
 export interface Author{
     name: string;
-    birthDate: Date;
-    deathDate: Date;
+    birthDate: string;
+    deathDate: string | null;
     gender: string;
 }

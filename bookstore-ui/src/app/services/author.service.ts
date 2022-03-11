@@ -9,7 +9,11 @@ export class AuthorService {
 
   constructor(private http: HttpClient) { }
 
-  public listAuthors() : Observable<any>{
+  public listAuthors(): Observable<any> {
     return this.http.get<any>("http://localhost:8080/api/authors/list")
+  }
+
+  public createAuthor(author: Author): Observable<any> {
+    return this.http.post("http://localhost:8080/api/authors/", author);
   }
 }

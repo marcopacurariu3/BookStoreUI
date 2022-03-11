@@ -1,0 +1,40 @@
+<div style="display: flex; flex-direction: column; align-items: center;">
+
+    <h2>Author</h2>
+    <mat-form-field>
+        <input matInput placeholder="Input" [(ngModel)]="author.name">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Birth date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="author.birthDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Death date</mat-label>
+        <input matInput [matDatepicker]="deathDatePicker" [(ngModel)]="author.deathDate">
+        <mat-datepicker-toggle matSuffix [for]="deathDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #deathDatePicker></mat-datepicker>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+        <mat-label>Gender</mat-label>
+        <select matNativeControl required [(ngModel)]="author.gender">
+            <option value="MALE">Male</option>
+            <option value="FEMALE">Female</option>
+        </select>
+    </mat-form-field>
+
+
+    <div style="display: flex; flex-direction: row;">
+        <button mat-button color="primary" (click)="create()">
+            Create
+        </button>
+        <button mat-button (click)="cancel()">
+            Cancel
+        </button>
+    </div>
+
+</div>
